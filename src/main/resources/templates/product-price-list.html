@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Student</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.3.1/dist/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/4.1.3/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/resources/js/main.js}"></script>
+    <link type="text/css" rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.min.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/resources/css/main.css}"/>
+</head>
+
+<div class="fluid-container">
+    <nav>
+        <div th:replace="~{my-menu :: mymenu(Index)}">
+        </div>
+    </nav>
+    <!--<nav>-->
+    <!--<div th:replace="~{my-menu :: mymenu}">-->
+    <!--</div>-->
+    <!--</nav>-->
+    <div class="visible-md" style="height:80px;"></div>
+</div>
+
+<html>
+<body>
+<form th:action="@{/showProductById}" method="get">
+    <br>
+    Min price: <input type="text" th:name="minPrice"/>
+    <br>
+    Max price: <input type="text" th:name="maxPrice"/>
+    <br>
+
+    <!--            <a class="btn btn-danger" th:href="@{'/showProductById/'}" role="button">Show</a>-->
+    <button type="submit" class="btn btn-primary infoBtn">Find products</button>
+
+    <!--            <td>-->
+    <!--&lt;!&ndash;                <button class="btn btn-primary infoBtn" th:attr="entryIndex=${price}">Show</button>&ndash;&gt;-->
+    <!--            </td>-->
+    <!--            <div class="submit">-->
+    <!--                <button name="addProduct" type="submit">Filtering product</button>-->
+    <!--            </div>-->
+
+</form>
+</body>
+</html>
