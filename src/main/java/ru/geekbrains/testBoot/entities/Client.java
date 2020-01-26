@@ -33,9 +33,6 @@ public class Client {
         return id;
     }
 
-//    @Basic(fetch = FetchType.LAZY)
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-//    private List<Product> product;
 
     public Client() {
     }

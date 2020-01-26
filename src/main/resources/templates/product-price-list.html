@@ -17,10 +17,6 @@
         <div th:replace="~{my-menu :: mymenu(Index)}">
         </div>
     </nav>
-    <!--<nav>-->
-    <!--<div th:replace="~{my-menu :: mymenu}">-->
-    <!--</div>-->
-    <!--</nav>-->
     <div class="visible-md" style="height:80px;"></div>
 </div>
 
@@ -33,15 +29,7 @@
     Max price: <input type="text" th:name="maxPrice"/>
     <br>
 
-    <!--            <a class="btn btn-danger" th:href="@{'/showProductById/'}" role="button">Show</a>-->
     <button type="submit" class="btn btn-primary infoBtn">Find products</button>
-
-    <!--            <td>-->
-    <!--&lt;!&ndash;                <button class="btn btn-primary infoBtn" th:attr="entryIndex=${price}">Show</button>&ndash;&gt;-->
-    <!--            </td>-->
-    <!--            <div class="submit">-->
-    <!--                <button name="addProduct" type="submit">Filtering product</button>-->
-    <!--            </div>-->
 
 </form>
 </body>

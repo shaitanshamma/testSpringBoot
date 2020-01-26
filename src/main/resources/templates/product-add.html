@@ -17,24 +17,20 @@
         <div th:replace="~{my-menu :: mymenu(Index)}">
         </div>
     </nav>
-    <!--<nav>-->
-    <!--<div th:replace="~{my-menu :: mymenu}">-->
-    <!--</div>-->
-    <!--</nav>-->
-    <div class="visible-md" style="height:80px;"> </div>
+    <div class="visible-md" style="height:80px;"></div>
 </div>
 
 <html>
-    <body>
-        <form th:action="@{/product/add}" th:object="${productAdd}"  method="post">
-            Title: <input type="text" th:field="*{title}"/>
-            <br>
-            Price: <input type="text" th:field="*{price}"/>
-            <br>
-            <div class="submit">
-                <button class="btn btn-danger" name="addProduct" type="submit">Add product</button>
-            </div>
+<body>
+<form th:action="@{/product/add}" th:object="${productAdd}" method="post">
+    Title: <input type="text" th:field="*{title}"/>
+    <br>
+    Price: <input type="text" th:field="*{price}"/>
+    <br>
+    <div class="submit">
+        <button class="btn btn-danger" name="addProduct" type="submit">Add product</button>
+    </div>
 
-        </form>
-    </body>
+</form>
+</body>
 </html>
