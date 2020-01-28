@@ -62,4 +62,9 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findByPriceBetween(min, max);
     }
 
+    @Override
+    public void delete(Long id) {
+        productRepository.deleteById(id);
+    }
+
 }
