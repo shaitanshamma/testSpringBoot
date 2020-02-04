@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
     // https://getbootstrap.com/docs/4.1/getting-started/introduction/
 
+
     @RequestMapping("/")
     public String showHomePage() {
         return "index";
-    }    
+    }
 }
