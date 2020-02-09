@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring Boot Book</title>
+</head>
+<body>
+<div sec:authorize="isAuthenticated()">
+    Authenticated username:
+    <div sec:authentication="principal.username"></div>
+    Authenticated user roles:
+    <div sec:authentication="principal.authorities"></div>
+</div>
+
+<!--<div sec:authorize access="hasAnyRole('ADMIN', 'USER')">-->
+<div sec:authorize="hasRole('ADMIN')">
+    This content will only be visible to users who have the "supervisor" authority in their list of <tt>GrantedAuthority</tt>s.
+</div>
+
+<div sec:authorize="isAuthenticated()">
+    <li class="nav-item">
+        <form th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout"/>
+        </form>
+    </li>
+</div>
+
+
+
+<h1>Create Book</h1>
+<form th:action="@{/}" th:object="${book}" method="post">
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" th:field="*{title}"/></td>
+        </tr>
+        <tr>
+            <td>Content:</td>
+            <td><input type="text" th:field="*{content}"/></td>
+        </tr>
+        <tr >
+            <td>
+                <button sec:authorize="hasRole('ADMIN')" type="submit">create book</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
