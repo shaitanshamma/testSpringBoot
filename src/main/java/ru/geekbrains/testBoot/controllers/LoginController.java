@@ -13,7 +13,7 @@ public class LoginController {
         return "login";
     }
     @GetMapping("/error")
-    public String showMyErrorPage() {
+    public String showErrorPage() {
         return "error_page";
     }
 
